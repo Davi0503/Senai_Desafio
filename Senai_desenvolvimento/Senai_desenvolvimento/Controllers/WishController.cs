@@ -24,20 +24,20 @@ namespace WishList_Desenvolvimento_Senai.Controllers
         }
 
 
-        //[HttpGet]
-
-        //public IActionResult WishList()
-        //{            
-        //    return Ok(_service.WishList());
-        //}
-
-
         [HttpGet]
-        public IActionResult WishUserList(int ID)
-        {
 
-            return Ok(_service.WishUserList(ID));
+        public IActionResult WishList()
+        {
+            return Ok(_service.WishList());
         }
+
+
+        //[HttpGet]
+        //public IActionResult WishUserList(int ID)
+        //{
+
+        //    return Ok(_service.WishUserList(ID));
+        //}
 
 
         [HttpPost]

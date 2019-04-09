@@ -1,0 +1,140 @@
+{
+	"id": "1d64673b-cf71-5178-7678-178643cb1d6e",
+	"name": "WishList",
+	"description": "",
+	"order": [
+		"c3fb75fa-dcd5-1ecd-14bb-242430f4ffd1",
+		"686b4ca1-9cf2-db18-6d29-91babfc23ef3",
+		"36b6e30b-49ea-ef75-7bf3-d15cb5637e2b",
+		"b4125516-5a58-23ee-7781-7bf3a7a709fc"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1554814731326,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "36b6e30b-49ea-ef75-7bf3-d15cb5637e2b",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhdmlAZ21haWwuY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJEYXZpIiwiZXhwIjoxNTU0ODExMDk3LCJpc3MiOiJXaXNoTGlzdC5XZWJBcGkiLCJhdWQiOiJXaXNoTGlzdC5XZWJBcGkifQ.UinCWXNmriQeq1AW7O_6u6aqpMCkyyqprm5sbrTixrQ\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhdmlAZ21haWwuY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJEYXZpIiwiZXhwIjoxNTU0ODExMDk3LCJpc3MiOiJXaXNoTGlzdC5XZWJBcGkiLCJhdWQiOiJXaXNoTGlzdC5XZWJBcGkifQ.UinCWXNmriQeq1AW7O_6u6aqpMCkyyqprm5sbrTixrQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:60468/api/Wish",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1d64673b-cf71-5178-7678-178643cb1d6e",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Desejos",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1554814815302,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n  \"descwish\": \"alow bananinha\"\r\n}"
+		},
+		{
+			"id": "686b4ca1-9cf2-db18-6d29-91babfc23ef3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:54911/api/User",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1d64673b-cf71-5178-7678-178643cb1d6e",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Cadastrar",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1554814798781,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n  \"nome\": \"Davi\",\r\n  \"email\": \"davi@gmail.com\",\r\n  \"senha\": \"1234\",\r\n  \"ativo\": \"1\"\r\n}"
+		},
+		{
+			"id": "b4125516-5a58-23ee-7781-7bf3a7a709fc",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:60468/api/Wish",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1d64673b-cf71-5178-7678-178643cb1d6e",
+			"data": null,
+			"dataMode": "params",
+			"name": "Listar",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1554815096917,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "c3fb75fa-dcd5-1ecd-14bb-242430f4ffd1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:60468/api/Account/Login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1d64673b-cf71-5178-7678-178643cb1d6e",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1554814780046,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n  \"email\": \"davi@gmail.com\",\r\n  \"senha\": \"1234\"\r\n}"
+		}
+	]
+}
