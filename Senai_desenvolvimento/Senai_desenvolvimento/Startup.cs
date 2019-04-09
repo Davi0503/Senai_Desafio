@@ -80,6 +80,14 @@ namespace Senai_desenvolvimento
 
 
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
 
 
         }
@@ -100,6 +108,8 @@ namespace Senai_desenvolvimento
             });
 
             app.UseAuthentication();
+
+            app.UseCors("CorsPolicy");
 
             app.UseMvc();
         }
