@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using WishList_Desenvolvimento_Senai.Domains;
 using WishList_Desenvolvimento_Senai.Domains.DTO;
 using WishList_Desenvolvimento_Senai.Interfaces;
 using WishList_Desenvolvimento_Senai.Interfaces.IRespositories;
 using WishList_Desenvolvimento_Senai.Repositories;
+using Infra.Data.Utils;
 
 namespace WishList_Desenvolvimento_Senai.Services
 {
@@ -18,10 +20,12 @@ namespace WishList_Desenvolvimento_Senai.Services
     {
 
         private IUserRepository _repository;
+        private UtilsInfra _utils;
 
-        public UserService()
+        public UserService(IUserRepository repository)
         {
-            _repository = new UserRepository();
+            _repository = repository;
+            _utils = new UtilsInfra();
         }
 
 
@@ -29,14 +33,24 @@ namespace WishList_Desenvolvimento_Senai.Services
         {
 
             var userCheck = _repository.FindByEmail(user.Email);
-            user.Ativo = true;
+            user.Ativo = true;            
 
-            if (userCheck != null)
+
+
+           if (userCheck != null)
             {
 
                 throw new Exception("Email já cadastrado");
 
             }
+
+            using (MD5 md5Hash = MD5.Create())
+            {
+
+                var hashSenha = _utils.GetMd5Hash(md5Hash, user.Senha);
+                user.Senha = hashSenha;
+            }
+
 
             _repository.CreateUser(user);
 
@@ -54,13 +68,22 @@ namespace WishList_Desenvolvimento_Senai.Services
         {
 
 
-            var userChecked = _repository.CheckLogin(user);
+            //var userChecked = _repository.CheckLogin(user);
 
+            var userChecked = _repository.FindByEmail(user.Email);
 
-            if (userChecked == null)
+            using (MD5 md5Hash = MD5.Create())
             {
-                throw new Exception("Email ou senha inválido");
+
+                bool senha = _utils.VerifyMd5Hash(md5Hash, user.Senha, userChecked.Senha);
+
+                if (userChecked == null || senha == false)
+                {
+                    throw new Exception("Email ou senha inválido");
+                }
+
             }
+            
 
 
             var claims = new[]

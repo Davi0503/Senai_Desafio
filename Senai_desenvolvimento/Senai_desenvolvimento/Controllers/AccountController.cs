@@ -28,6 +28,7 @@ namespace WishList_Desenvolvimento_Senai.Controllers
 
         [HttpPost]
         [Route("Login")]
+        
         public IActionResult Login(LoginDTO user)
         {
             try
@@ -48,13 +49,6 @@ namespace WishList_Desenvolvimento_Senai.Controllers
 
             }             
         }
-
-        [HttpGet]
-        [Route("batatinha")]
-        [Authorize]
-        public IActionResult batatinha()
-        {
-            return Ok("DeuBOm");
-        }
+        
     }
 }

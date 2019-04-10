@@ -1,4 +1,5 @@
 ﻿using Infra.Data.Domains;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using WishList_Desenvolvimento_Senai.Domains;
@@ -34,12 +35,13 @@ namespace WishList_Desenvolvimento_Senai.Controllers
             }catch(Exception ex)
             {
 
-                throw new Exception(ex.Message);
+                return BadRequest(ex.Message);
             }            
 
         }
 
         [HttpPut]
+        [Authorize]
         public IActionResult EditUser(User user)
         {
             try
@@ -50,7 +52,7 @@ namespace WishList_Desenvolvimento_Senai.Controllers
 
             }catch(Exception ex)
             {
-                throw new Exception("Erro ao Atualizar!");
+                return BadRequest("Erro ao Atualizar!");
             }
 
         }
